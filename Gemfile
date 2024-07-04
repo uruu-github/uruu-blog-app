@@ -72,3 +72,5 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "webpacker", "~> 5.4"
