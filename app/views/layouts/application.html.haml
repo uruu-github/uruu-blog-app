@@ -22,7 +22,7 @@
           = image_tag 'default-avatar.png',class: 'header_avatar dropbtn'
           .dropdown-content
             %a{:href => "#"} プロフィール
-            = button_to 'ログアウト', destroy_user_session_path, method: :delete
+            = button_to 'ログアウト', destroy_user_session_path, { method: :delete, confirm: '本当に削除してよろしいですか？' }
             -# = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
       - else
         = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
