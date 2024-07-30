@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema[7.0].define(version: 2024_07_15_225234) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,7 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false
@@ -52,7 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "article_id", null: false
+    t.integer "article_id", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,8 +57,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "article_id", null: false
+    t.integer "user_id", null: false
+    t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_likes_on_article_id"
@@ -69,7 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "nickname"
     t.text "introduction"
     t.integer "gender"
@@ -84,8 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_15_225234) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -9,14 +9,14 @@
     = javascript_include_tag 'application'
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %link{:href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-    = javascript_tag
+    = javascript_importmap_tags
   %body
     %header.header
       .header-logos
         - unless current_page?(root_path)
           = link_to :back do
             = image_tag 'back.svg', class: 'header_back'
-        %p.header_pageTitle
+        %p.header_pageTitle 
           = link_to 'BlogApp', root_path
       - if user_signed_in?
         .dropdown
