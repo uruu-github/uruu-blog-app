@@ -66,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'psych', '~> 3.1'
 
 gem 'sidekiq'
+
+gem 'sprockets', '~> 4.0'
