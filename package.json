@@ -10,7 +10,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "webpack": "^5.93.0",
-    "webpack-dev-server": "^4.0.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "engines": {
     "node": ">=20.16.0",
